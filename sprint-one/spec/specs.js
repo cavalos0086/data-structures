@@ -139,6 +139,13 @@ define([
         expect(queue.dequeue()).to.equal('a');
         queue.enqueue('b');
         expect(queue.dequeue()).to.equal('b');
+        queue.enqueue('f');
+        queue.enqueue('g');
+        queue.enqueue('h');
+        expect(queue.dequeue()).to.equal('f');
+        expect(queue.dequeue()).to.equal('g');
+        expect(queue.dequeue()).to.equal('h');
+        // debugger;
       });
 
     });
