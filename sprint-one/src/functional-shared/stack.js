@@ -39,11 +39,6 @@ stackMethods.size = function(){
 };
 
 
-var yolo = Stack();
-console.log(yolo.size());
-
-
-
 
 
 

@@ -1,5 +1,6 @@
 var Stack = function(){
   var someInstance = {};
+  var size = 0;
 
   // size of the stack instance:
   var size = 0;
@@ -13,12 +14,14 @@ var Stack = function(){
   };
 
   someInstance.pop = function(){
+
+    var temp =  storage[size-1];
+    delete storage[size-1];
     if(size > 0){
-      var popElement =  storage[size-1];
-      delete storage[size];
       size--;
     }
-    return popElement;
+    return temp;
+
   };
 
   someInstance.size = function(){
