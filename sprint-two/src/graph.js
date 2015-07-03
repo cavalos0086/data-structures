@@ -21,35 +21,38 @@ Graph.prototype.removeNode = function(node){
 
 Graph.prototype.hasEdge = function(fromNode, toNode){
 
-	if(this.nodeStorage[fromNode].edges.includes(toNode)){ // don't use includes
-		return true;
-	} else {
-		return false;
-	}
+	return (this.nodeStorage[fromNode].edges[toNode] === toNode); // don't use includes
+
 };
 
 Graph.prototype.addEdge = function(fromNode, toNode){
 	var from = this.nodeStorage[fromNode];
 	var to = this.nodeStorage[toNode];
-	from.edges[from.edges.length] = toNode;
-	to.edges[to.edges.length] = fromNode;
+	from.edges[toNode] = toNode;
+	to.edges[fromNode] = fromNode;
 };
 
 Graph.prototype.removeEdge = function(fromNode, toNode){
+	delete this.nodeStorage[fromNode].edges[toNode];
+	delete this.nodeStorage[toNode].edges[fromNode];
 };
 
 Graph.prototype.forEachNode = function(cb){
+	for(var key in this.nodeStorage){
+		cb.call(this, key);
+	}
 };
 
 /*
- * Complexity: What is the time complexity of the above functions?
+ * 	All except forEachNode = constant;
+	forEachNode = O(n).
  */
 
 var GraphNode = function(value){
   var node = {};
 
   node.value = value;
-  node.edges = [];
+  node.edges = {};
 
   return node;
 };
