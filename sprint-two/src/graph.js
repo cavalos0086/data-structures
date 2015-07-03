@@ -16,7 +16,7 @@ Graph.prototype.contains = function(node){
 Graph.prototype.removeNode = function(node){
 	if(this.nodeStorage[node] !== undefined){
 		delete this.nodeStorage[node];
-	}
+	} // should remove edges?
 };
 
 Graph.prototype.hasEdge = function(fromNode, toNode){
