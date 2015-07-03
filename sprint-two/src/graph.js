@@ -1,56 +1,38 @@
 
 
 var Graph = function(){
-	this.nodeStorage = [];
+	this.nodeStorage = {};
 };
 
 Graph.prototype.addNode = function(node){
-	this.nodeStorage[this.nodeStorage.length] = GraphNode(node);
+	this.nodeStorage[node] = GraphNode(node);
 
 };
 
 Graph.prototype.contains = function(node){
-	for(var i = 0;i<this.nodeStorage.length;i++){
-		if(this.nodeStorage[i].value === node){
-			return true;
-		}
-	}
-	return false;
+	return (this.nodeStorage[node] !== undefined);
 };
 
 Graph.prototype.removeNode = function(node){
-	//find node with value
-	//frmove node
-	for(var i=0;i<this.nodeStorage.length;i++){
-		if(this.nodeStorage[i].value === node){
-			this.nodeStorage.splice(i, 1);
-		}
+	if(this.nodeStorage[node] !== undefined){
+		delete this.nodeStorage[node];
 	}
 };
 
 Graph.prototype.hasEdge = function(fromNode, toNode){
-	for(var i=0;i<this.nodeStorage.length;i++){
-		if(this.nodeStorage.edges.includes())
-	}
 
+	if(this.nodeStorage[fromNode].edges.includes(toNode)){ // don't use includes
+		return true;
+	} else {
+		return false;
+	}
 };
 
 Graph.prototype.addEdge = function(fromNode, toNode){
-	var fromIndex;
-	var toIndex;
-
-	for(var i=0;i<this.nodeStorage.length;i++){
-		if(this.nodeStorage[i].value === fromNode){
-			fromIndex = i;
-		} else if (this.nodeStorage[i].value === toNode){
-			toIndex = i;
-		}
-	}
-	var fromEdges = this.nodeStorage[fromIndex].edges[];
-	var toEdges = this.nodeStorage[toIndex].edges[];
-
-	fromEdges[fromEdges.length] = this.nodeStorage[toIndex].value;
-	toEdges[toEdges.length] = this.nodeStorage[fromIndex].value;
+	var from = this.nodeStorage[fromNode];
+	var to = this.nodeStorage[toNode];
+	from.edges[from.edges.length] = toNode;
+	to.edges[to.edges.length] = fromNode;
 };
 
 Graph.prototype.removeEdge = function(fromNode, toNode){

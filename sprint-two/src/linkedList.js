@@ -32,7 +32,6 @@ var LinkedList = function(){
     var currentNode = this.head; // starts searching at head
 
     do { // continues search until .next === null
-        console.log("node:", this.head); //log
       if(currentNode.value === target){ // if current node === target
         return true; // return true
       } else {
