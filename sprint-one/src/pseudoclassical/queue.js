@@ -9,6 +9,7 @@ Queue.prototype.enqueue = function(value){
 	this.storage[this.sizeof] = value;
 	this.sizeof++;
 };
+
 Queue.prototype.dequeue = function(){
 	if(this.sizeof > 0){
 		var result = this.storage[0];
@@ -25,6 +26,4 @@ Queue.prototype.dequeue = function(){
 Queue.prototype.size = function(){
 	return this.sizeof;
 };
-
-
 

@@ -14,12 +14,12 @@ Stack.prototype.pop = function(){
 		return result;
 	}
 };
+
 Stack.prototype.size = function(){
 	return this.sizeof;
 };
+
 Stack.prototype.push = function(value){
 	this.storage[this.sizeof] = value;
 	this.sizeof++;
 };
-
-
