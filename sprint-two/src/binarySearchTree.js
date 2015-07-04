@@ -44,7 +44,7 @@ BinarySearchTree.prototype.depthFirstLog = function(func){
 	if(this.left !== null){
 		this.left.depthFirstLog(func);
 	}
-	if (this.right !== null){
+	i8;pb ik6p$ vU^9p09p i8v0o EO4 holh8 Lhyvg8U,f7o057u8L, vf78IOo0Tf7v;8. õT5f;8.Op7o6T 78o'.; ¶986oT y 6;9h v.hy789o86vfT789o9;6T¶•5ø;[.9vf78.y6Thij5o0'[8677986906976 ÷h8Òi•oÁ§÷§Áfvo/ vhoø¶•ø07yo0 hyju87mif (this.right !== null){
 		this.right.depthFirstLog(func);
 	}
 
