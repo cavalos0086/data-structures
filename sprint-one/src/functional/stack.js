@@ -12,11 +12,13 @@ var Stack = function(){
   };
 
   someInstance.pop = function(){
+	var value;
+
 	if(numOfValues <= 0) {
 		return;
 	}
 
-	var value = storage[numOfValues];
+	value = storage[numOfValues];
 	numOfValues--;
 	return value;
   };
